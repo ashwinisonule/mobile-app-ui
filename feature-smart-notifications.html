@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appify — Smart Notifications</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f7f7f7;
+    color:#555;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ================= HEADER ================= */
+
+.features-header{
+    width:100%;
+    height:78px;
+    background:#fff;
+    border-bottom:1px solid #eee;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    z-index:100;
+}
+
+.header-container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#222;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#e63946;
+}
+
+nav{
+    display:flex;
+    gap:32px;
+}
+
+nav a{
+    color:#555;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#e63946;
+}
+
+.mobile-menu{
+    display:none;
+    font-size:20px;
+    color:#222;
+}
+
+
+/* ================= HERO ================= */
+
+.page-hero{
+    min-height:440px;
+
+    background:
+        linear-gradient(
+            rgba(20,20,20,.80),
+            rgba(20,20,20,.80)
+        ),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    padding:60px 20px;
+}
+
+.page-hero-content{
+    max-width:850px;
+}
+
+.small-title{
+    color:#e63946;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+
+.page-hero-content h1{
+    color:#fff;
+    font-size:50px;
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.page-hero-content h1 span{
+    color:#e63946;
+}
+
+.line{
+    width:55px;
+    height:3px;
+    background:#e63946;
+    margin:0 auto 25px;
+}
+
+.description{
+    color:#ddd;
+    font-size:13px;
+    line-height:1.9;
+    max-width:650px;
+    margin:auto;
+}
+
+
+/* ================= MAIN DETAIL ================= */
+
+.notification-detail{
+    padding:90px 7%;
+}
+
+.detail-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+    align-items:center;
+}
+
+.detail-image{
+    height:500px;
+    overflow:hidden;
+}
+
+.detail-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.sub-heading{
+    color:#e63946;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:14px;
+}
+
+.detail-content h2{
+    color:#222;
+    font-size:36px;
+    line-height:1.25;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.detail-content h2 span{
+    color:#e63946;
+}
+
+.red-line{
+    width:50px;
+    height:3px;
+    background:#e63946;
+    margin-bottom:25px;
+}
+
+.detail-content p{
+    color:#777;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+
+/* ================= NOTIFICATION FEATURES ================= */
+
+.notification-section{
+    background:#fff;
+    padding:90px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
+}
+
+.section-heading h2{
+    color:#222;
+    font-size:34px;
+    line-height:1.3;
+    font-weight:800;
+}
+
+.section-heading h2 span{
+    color:#e63946;
+}
+
+.notification-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.notification-card{
+    padding:35px 28px;
+
+    background:#f7f7f7;
+    border:1px solid #eee;
+
+    transition:.3s;
+}
+
+.notification-card:hover{
+    transform:translateY(-5px);
+    border-color:#e63946;
+}
+
+.notification-icon{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e63946;
+    color:#fff;
+
+    font-size:18px;
+
+    margin-bottom:22px;
+}
+
+.notification-card h3{
+    color:#222;
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+.notification-card p{
+    color:#777;
+    font-size:11px;
+    line-height:1.9;
+}
+
+
+/* ================= REMINDER SECTION ================= */
+
+.reminder-section{
+    padding:90px 7%;
+    background:#f1f1f1;
+}
+
+.reminder-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+    align-items:center;
+}
+
+.reminder-content h2{
+    color:#222;
+    font-size:34px;
+    line-height:1.3;
+    margin-bottom:20px;
+}
+
+.reminder-content h2 span{
+    color:#e63946;
+}
+
+.reminder-content p{
+    color:#777;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.reminder-list{
+    margin-top:25px;
+}
+
+.reminder-list div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#555;
+    font-size:12px;
+    font-weight:600;
+
+    margin-bottom:15px;
+}
+
+.reminder-list i{
+    width:23px;
+    height:23px;
+
+    background:#e63946;
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:9px;
+}
+
+.reminder-image{
+    height:430px;
+}
+
+.reminder-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+/* ================= NOTIFICATION FLOW ================= */
+
+.flow-section{
+    background:#fff;
+    padding:90px 7%;
+}
+
+.flow-container{
+    max-width:1000px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.flow-card{
+    text-align:center;
+    padding:35px 25px;
+    border:1px solid #eee;
+    background:#fff;
+}
+
+.flow-number{
+    width:45px;
+    height:45px;
+
+    margin:0 auto 20px;
+
+    background:#e63946;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.flow-card h3{
+    color:#222;
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+.flow-card p{
+    color:#777;
+    font-size:11px;
+    line-height:1.8;
+}
+
+
+/* ================= CTA ================= */
+
+.detail-cta{
+    padding:90px 20px;
+
+    background:
+        linear-gradient(
+            rgba(20,20,20,.88),
+            rgba(20,20,20,.88)
+        ),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    text-align:center;
+}
+
+.detail-cta p{
+    color:#e63946;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.detail-cta h2{
+    color:#fff;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.detail-cta h2 span{
+    color:#e63946;
+}
+
+.cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:15px 27px;
+
+    background:#e63946;
+    color:#fff;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.cta-btn:hover{
+    background:#fff;
+    color:#222;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#181818;
+    padding:55px 7% 25px;
+}
+
+.footer-container{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.footer-logo{
+    color:#fff;
+    font-size:25px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.footer-logo span{
+    color:#e63946;
+}
+
+.footer-container > p{
+    color:#999;
+    font-size:11px;
+    margin-bottom:22px;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.social-icons a{
+    width:35px;
+    height:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#292929;
+    color:#aaa;
+
+    font-size:11px;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#e63946;
+    color:#fff;
+}
+
+.copyright{
+    padding-top:22px;
+    border-top:1px solid #292929;
+
+    color:#777;
+    font-size:9px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        gap:17px;
+    }
+
+    .detail-container,
+    .reminder-container{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .notification-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .flow-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .page-hero{
+        min-height:360px;
+    }
+
+    .page-hero-content h1{
+        font-size:34px;
+    }
+
+    .notification-detail,
+    .notification-section,
+    .reminder-section,
+    .flow-section{
+        padding:65px 6%;
+    }
+
+    .detail-content h2,
+    .reminder-content h2{
+        font-size:28px;
+    }
+
+    .detail-image{
+        height:330px;
+    }
+
+    .notification-grid,
+    .flow-container{
+        grid-template-columns:1fr;
+    }
+
+    .reminder-image{
+        height:320px;
+    }
+
+    .detail-cta h2{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="features-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            App<span>ify</span>
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="features.html" class="active">
+                FEATURES
+            </a>
+
+            <a href="download.html">
+                DOWNLOAD
+            </a>
+
+            <a href="blog.html">
+                BLOG
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+        <div class="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <p class="small-title">
+            APPIFY FEATURE
+        </p>
+
+        <h1>
+            Smart
+            <span>Notifications.</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <p class="description">
+            Stay informed with useful reminders and timely
+            notifications designed to keep you updated without
+            overwhelming your day.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN DETAIL ================= -->
+
+<section class="notification-detail">
+
+    <div class="detail-container">
+
+
+        <div class="detail-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?auto=format&fit=crop&w=1000&q=85"
+                alt="Smart Notifications">
+
+        </div>
+
+
+        <div class="detail-content">
+
+            <p class="sub-heading">
+                FEATURE 05
+            </p>
+
+            <h2>
+                Stay Updated.
+                <span>Stay In Control.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Appify keeps you informed with notifications
+                that are designed to be useful, timely and easy
+                to understand.
+            </p>
+
+            <p>
+                From important reminders to helpful updates,
+                notifications help you stay connected with the
+                information that matters.
+            </p>
+
+            <p>
+                The goal is simple — give you the right
+                information at the right time without creating
+                unnecessary distractions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTIFICATION FEATURES ================= -->
+
+<section class="notification-section">
+
+    <div class="section-heading">
+
+        <p class="sub-heading">
+            SMART ALERTS
+        </p>
+
+        <h2>
+            Notifications That
+            <span>Work For You.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="notification-grid">
+
+
+        <div class="notification-card">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-bell"></i>
+            </div>
+
+            <h3>
+                Timely Alerts
+            </h3>
+
+            <p>
+                Receive useful information when it is most
+                relevant to your activity.
+            </p>
+
+        </div>
+
+
+        <div class="notification-card">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <h3>
+                Smart Reminders
+            </h3>
+
+            <p>
+                Helpful reminders can keep important tasks
+                from being forgotten.
+            </p>
+
+        </div>
+
+
+        <div class="notification-card">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-circle-exclamation"></i>
+            </div>
+
+            <h3>
+                Important Updates
+            </h3>
+
+            <p>
+                Stay informed about important changes and
+                updates within the application.
+            </p>
+
+        </div>
+
+
+        <div class="notification-card">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <h3>
+                Message Alerts
+            </h3>
+
+            <p>
+                Never miss useful messages or information that
+                needs your attention.
+            </p>
+
+        </div>
+
+
+        <div class="notification-card">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <h3>
+                Schedule Reminders
+            </h3>
+
+            <p>
+                Keep track of important dates, activities and
+                scheduled events.
+            </p>
+
+        </div>
+
+
+        <div class="notification-card">
+
+            <div class="notification-icon">
+                <i class="fa-solid fa-filter"></i>
+            </div>
+
+            <h3>
+                Relevant Alerts
+            </h3>
+
+            <p>
+                Focus on notifications that provide useful
+                information instead of unnecessary noise.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= REMINDER ================= -->
+
+<section class="reminder-section">
+
+    <div class="reminder-container">
+
+
+        <div class="reminder-content">
+
+            <p class="sub-heading">
+                NEVER MISS WHAT MATTERS
+            </p>
+
+            <h2>
+                Information At
+                <span>The Right Time.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Notifications should make your experience
+                easier, not more complicated. Appify focuses
+                on delivering useful information in a clear
+                and simple way.
+            </p>
+
+            <p>
+                Whether it is a reminder, an update or an
+                important message, you can quickly understand
+                what needs your attention.
+            </p>
+
+
+            <div class="reminder-list">
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Useful reminders
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Timely notifications
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Important updates
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Less unnecessary distraction
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="reminder-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+                alt="Notification Experience">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= NOTIFICATION FLOW ================= -->
+
+<section class="flow-section">
+
+    <div class="section-heading">
+
+        <p class="sub-heading">
+            SIMPLE EXPERIENCE
+        </p>
+
+        <h2>
+            From Alert To
+            <span>Action.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="flow-container">
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                01
+            </div>
+
+            <h3>
+                Receive
+            </h3>
+
+            <p>
+                Get a notification when useful information
+                becomes available.
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                02
+            </div>
+
+            <h3>
+                Understand
+            </h3>
+
+            <p>
+                Quickly understand the purpose of the
+                notification with clear information.
+            </p>
+
+        </div>
+
+
+        <div class="flow-card">
+
+            <div class="flow-number">
+                03
+            </div>
+
+            <h3>
+                Take Action
+            </h3>
+
+            <p>
+                Open the app and take the appropriate action
+                when something requires your attention.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="detail-cta">
+
+    <div>
+
+        <p>
+            READY TO EXPERIENCE APPIFY?
+        </p>
+
+        <h2>
+            Stay Informed.
+            <span>Stay Ahead.</span>
+        </h2>
+
+        <a href="download.html" class="cta-btn">
+
+            DOWNLOAD APP
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            App<span>ify</span>
+        </div>
+
+        <p>
+            Modern mobile experience for modern users.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Appify. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

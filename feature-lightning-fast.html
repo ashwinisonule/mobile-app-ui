@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Appify — Lightning Fast</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f7f7f7;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .features-header {
+            width: 100%;
+            height: 78px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: #222;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #555;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e63946;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 20px;
+            color: #222;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .page-hero {
+            min-height: 440px;
+
+            background:
+                linear-gradient(
+                    rgba(20, 20, 20, .78),
+                    rgba(20, 20, 20, .78)
+                ),
+                url("https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 60px 20px;
+        }
+
+        .page-hero-content {
+            max-width: 850px;
+        }
+
+        .page-hero-content .small-title {
+            color: #e63946;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero-content h1 {
+            color: #fff;
+            font-size: 52px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero-content h1 span {
+            color: #e63946;
+        }
+
+        .page-hero-content .line {
+            width: 55px;
+            height: 3px;
+            background: #e63946;
+            margin: 0 auto 25px;
+        }
+
+        .page-hero-content .description {
+            color: #ddd;
+            font-size: 13px;
+            line-height: 1.9;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* ================= INTRO ================= */
+
+        .feature-detail {
+            padding: 90px 7%;
+        }
+
+        .detail-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .detail-image {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .detail-content .sub-heading {
+            color: #e63946;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+        }
+
+        .detail-content h2 {
+            color: #222;
+            font-size: 36px;
+            line-height: 1.25;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .detail-content h2 span {
+            color: #e63946;
+        }
+
+        .red-line {
+            width: 50px;
+            height: 3px;
+            background: #e63946;
+            margin-bottom: 25px;
+        }
+
+        .detail-content p {
+            font-size: 13px;
+            line-height: 2;
+            color: #777;
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= BENEFITS ================= */
+
+        .benefits {
+            padding: 90px 7%;
+            background: #fff;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: auto;
+            margin-bottom: 55px;
+        }
+
+        .section-heading .sub-heading {
+            color: #e63946;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .section-heading h2 {
+            color: #222;
+            font-size: 34px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+
+        .section-heading h2 span {
+            color: #e63946;
+        }
+
+        .benefit-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background: #f7f7f7;
+            padding: 35px 28px;
+
+            border: 1px solid #eee;
+
+            transition: .3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            border-color: #e63946;
+        }
+
+        .benefit-icon {
+            width: 55px;
+            height: 55px;
+
+            background: #e63946;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+
+            margin-bottom: 22px;
+        }
+
+        .benefit-card h3 {
+            color: #222;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            color: #777;
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+
+        /* ================= PERFORMANCE ================= */
+
+        .performance {
+            padding: 90px 7%;
+            background: #f1f1f1;
+        }
+
+        .performance-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+            align-items: center;
+        }
+
+        .performance-content h2 {
+            color: #222;
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .performance-content h2 span {
+            color: #e63946;
+        }
+
+        .performance-content p {
+            color: #777;
+            font-size: 13px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .performance-list {
+            margin-top: 25px;
+        }
+
+        .performance-list div {
+            display: flex;
+            align-items: center;
+
+            gap: 12px;
+
+            color: #555;
+
+            font-size: 12px;
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+        .performance-list i {
+            width: 23px;
+            height: 23px;
+
+            background: #e63946;
+            color: #fff;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 9px;
+        }
+
+        .performance-image {
+            height: 420px;
+        }
+
+        .performance-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .detail-cta {
+            padding: 90px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(20,20,20,.88),
+                    rgba(20,20,20,.88)
+                ),
+                url("https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            text-align: center;
+        }
+
+        .detail-cta p {
+            color: #e63946;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .detail-cta h2 {
+            color: #fff;
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .detail-cta h2 span {
+            color: #e63946;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 15px 27px;
+
+            background: #e63946;
+            color: #fff;
+
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+            background: #fff;
+            color: #222;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #181818;
+            padding: 55px 7% 25px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: #e63946;
+        }
+
+        .footer-container > p {
+            color: #999;
+            font-size: 11px;
+            margin-bottom: 22px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #292929;
+            color: #aaa;
+
+            font-size: 11px;
+
+            transition: .3s;
+        }
+
+        .social-icons a:hover {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .copyright {
+            padding-top: 22px;
+            border-top: 1px solid #292929;
+
+            color: #777;
+            font-size: 9px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                gap: 17px;
+            }
+
+            .detail-container,
+            .performance-container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .detail-image {
+                height: 400px;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-hero {
+                min-height: 360px;
+            }
+
+            .page-hero-content h1 {
+                font-size: 34px;
+            }
+
+            .feature-detail,
+            .benefits,
+            .performance {
+                padding: 65px 6%;
+            }
+
+            .detail-content h2,
+            .performance-content h2 {
+                font-size: 28px;
+            }
+
+            .detail-image {
+                height: 330px;
+            }
+
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .performance-image {
+                height: 320px;
+            }
+
+            .detail-cta h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="features-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            App<span>ify</span>
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="features.html" class="active">
+                FEATURES
+            </a>
+
+            <a href="download.html">
+                DOWNLOAD
+            </a>
+
+            <a href="blog.html">
+                BLOG
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+        <div class="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <p class="small-title">
+            APPIFY FEATURE
+        </p>
+
+        <h1>
+            Lightning
+            <span>Fast.</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <p class="description">
+            Enjoy a fast, smooth and responsive experience
+            designed to keep you moving without unnecessary
+            waiting or interruptions.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= MAIN DETAIL ================= -->
+
+<section class="feature-detail">
+
+    <div class="detail-container">
+
+
+        <div class="detail-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1000&q=85"
+                alt="Fast Mobile Application">
+
+        </div>
+
+
+        <div class="detail-content">
+
+            <p class="sub-heading">
+                FEATURE 01
+            </p>
+
+            <h2>
+                Speed That
+                <span>Feels Natural.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Appify is designed with performance at its core.
+                Every screen, interaction and feature is carefully
+                optimized to provide a fast and responsive experience.
+            </p>
+
+            <p>
+                From opening the application to switching between
+                different sections, Appify keeps the experience
+                smooth and simple.
+            </p>
+
+            <p>
+                You should not have to wait for an application
+                to catch up with you. Appify is built to keep up
+                with the way you use it.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= BENEFITS ================= -->
+
+<section class="benefits">
+
+    <div class="section-heading">
+
+        <p class="sub-heading">
+            WHY IT MATTERS
+        </p>
+
+        <h2>
+            Built For A
+            <span>Faster Experience.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="benefit-grid">
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-gauge-high"></i>
+            </div>
+
+            <h3>
+                Quick Loading
+            </h3>
+
+            <p>
+                Important screens are designed to load quickly,
+                helping you get to the information you need
+                without unnecessary delays.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-bolt"></i>
+            </div>
+
+            <h3>
+                Smooth Interactions
+            </h3>
+
+            <p>
+                Buttons, navigation and everyday actions feel
+                responsive and natural throughout the application.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <h3>
+                Mobile Optimized
+            </h3>
+
+            <p>
+                Appify is designed around mobile usage so the
+                interface remains comfortable and responsive
+                on different screen sizes.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <h3>
+                Efficient Technology
+            </h3>
+
+            <p>
+                Clean and efficient technology helps reduce
+                unnecessary processing and keeps the experience
+                lightweight.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-rotate"></i>
+            </div>
+
+            <h3>
+                Reliable Performance
+            </h3>
+
+            <p>
+                The experience is designed to remain stable and
+                responsive during everyday use.
+            </p>
+
+        </div>
+
+
+        <div class="benefit-card">
+
+            <div class="benefit-icon">
+                <i class="fa-solid fa-face-smile"></i>
+            </div>
+
+            <h3>
+                Better Experience
+            </h3>
+
+            <p>
+                Faster interactions make the entire application
+                feel easier and more enjoyable to use.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PERFORMANCE ================= -->
+
+<section class="performance">
+
+    <div class="performance-container">
+
+
+        <div class="performance-content">
+
+            <p class="sub-heading"
+               style="color:#e63946;
+                      font-size:10px;
+                      font-weight:800;
+                      letter-spacing:3px;">
+                PERFORMANCE FIRST
+            </p>
+
+            <h2>
+                Less Waiting.
+                <span>More Doing.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                We believe technology should make everyday tasks
+                easier rather than create additional friction.
+                That is why Appify focuses on speed and simplicity.
+            </p>
+
+            <div class="performance-list">
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Fast application startup
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Smooth page transitions
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Responsive interface
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Optimized mobile experience
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="performance-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1000&q=85"
+                alt="Appify Performance">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CTA ================= -->
+
+<section class="detail-cta">
+
+    <div>
+
+        <p>
+            READY TO EXPERIENCE APPIFY?
+        </p>
+
+        <h2>
+            Fast.
+            <span>Simple. Powerful.</span>
+        </h2>
+
+        <a href="download.html" class="cta-btn">
+
+            DOWNLOAD APP
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            App<span>ify</span>
+        </div>
+
+        <p>
+            Modern mobile experience for modern users.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Appify. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

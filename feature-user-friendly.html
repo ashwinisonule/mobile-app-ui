@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appify — User Friendly</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#f7f7f7;
+    color:#555;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* ================= HEADER ================= */
+
+.features-header{
+    width:100%;
+    height:78px;
+    background:#fff;
+    border-bottom:1px solid #eee;
+
+    display:flex;
+    align-items:center;
+
+    position:relative;
+    z-index:100;
+}
+
+.header-container{
+    width:90%;
+    max-width:1180px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#222;
+    font-size:25px;
+    font-weight:800;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#e63946;
+}
+
+nav{
+    display:flex;
+    gap:32px;
+}
+
+nav a{
+    color:#555;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:1px;
+    transition:.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#e63946;
+}
+
+.mobile-menu{
+    display:none;
+    font-size:20px;
+    color:#222;
+}
+
+
+/* ================= HERO ================= */
+
+.page-hero{
+    min-height:440px;
+
+    background:
+        linear-gradient(
+            rgba(20,20,20,.80),
+            rgba(20,20,20,.80)
+        ),
+        url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1600&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+    padding:60px 20px;
+}
+
+.page-hero-content{
+    max-width:850px;
+}
+
+.small-title{
+    color:#e63946;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:4px;
+    margin-bottom:18px;
+}
+
+.page-hero-content h1{
+    color:#fff;
+    font-size:50px;
+    line-height:1.2;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.page-hero-content h1 span{
+    color:#e63946;
+}
+
+.line{
+    width:55px;
+    height:3px;
+    background:#e63946;
+    margin:0 auto 25px;
+}
+
+.description{
+    color:#ddd;
+    font-size:13px;
+    line-height:1.9;
+    max-width:650px;
+    margin:auto;
+}
+
+
+/* ================= DETAIL ================= */
+
+.user-detail{
+    padding:90px 7%;
+}
+
+.detail-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+    align-items:center;
+}
+
+.detail-image{
+    height:500px;
+    overflow:hidden;
+}
+
+.detail-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.sub-heading{
+    color:#e63946;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:14px;
+}
+
+.detail-content h2{
+    color:#222;
+    font-size:36px;
+    line-height:1.25;
+    font-weight:800;
+    margin-bottom:20px;
+}
+
+.detail-content h2 span{
+    color:#e63946;
+}
+
+.red-line{
+    width:50px;
+    height:3px;
+    background:#e63946;
+    margin-bottom:25px;
+}
+
+.detail-content p{
+    color:#777;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:18px;
+}
+
+
+/* ================= EXPERIENCE ================= */
+
+.experience-section{
+    background:#fff;
+    padding:90px 7%;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 55px;
+}
+
+.section-heading h2{
+    color:#222;
+    font-size:34px;
+    line-height:1.3;
+    font-weight:800;
+}
+
+.section-heading h2 span{
+    color:#e63946;
+}
+
+.experience-grid{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.experience-card{
+    padding:35px 28px;
+
+    background:#f7f7f7;
+    border:1px solid #eee;
+
+    transition:.3s;
+}
+
+.experience-card:hover{
+    transform:translateY(-5px);
+    border-color:#e63946;
+}
+
+.experience-icon{
+    width:55px;
+    height:55px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#e63946;
+    color:#fff;
+
+    font-size:18px;
+
+    margin-bottom:22px;
+}
+
+.experience-card h3{
+    color:#222;
+    font-size:16px;
+    margin-bottom:12px;
+}
+
+.experience-card p{
+    color:#777;
+    font-size:11px;
+    line-height:1.9;
+}
+
+
+/* ================= EASY SECTION ================= */
+
+.easy-section{
+    padding:90px 7%;
+    background:#f1f1f1;
+}
+
+.easy-container{
+    max-width:1100px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+
+    gap:70px;
+    align-items:center;
+}
+
+.easy-content h2{
+    color:#222;
+    font-size:34px;
+    line-height:1.3;
+    margin-bottom:20px;
+}
+
+.easy-content h2 span{
+    color:#e63946;
+}
+
+.easy-content p{
+    color:#777;
+    font-size:13px;
+    line-height:2;
+    margin-bottom:20px;
+}
+
+.easy-list{
+    margin-top:25px;
+}
+
+.easy-list div{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    color:#555;
+    font-size:12px;
+    font-weight:600;
+
+    margin-bottom:15px;
+}
+
+.easy-list i{
+    width:23px;
+    height:23px;
+
+    background:#e63946;
+    color:#fff;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:9px;
+}
+
+.easy-image{
+    height:430px;
+}
+
+.easy-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+/* ================= STEPS ================= */
+
+.steps-section{
+    background:#fff;
+    padding:90px 7%;
+}
+
+.steps-container{
+    max-width:1000px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.step-card{
+    text-align:center;
+    padding:35px 25px;
+
+    border:1px solid #eee;
+    background:#fff;
+}
+
+.step-number{
+    width:45px;
+    height:45px;
+
+    margin:0 auto 20px;
+
+    background:#e63946;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.step-card h3{
+    color:#222;
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+.step-card p{
+    color:#777;
+    font-size:11px;
+    line-height:1.8;
+}
+
+
+/* ================= CTA ================= */
+
+.detail-cta{
+    padding:90px 20px;
+
+    background:
+        linear-gradient(
+            rgba(20,20,20,.88),
+            rgba(20,20,20,.88)
+        ),
+        url("https://images.unsplash.com/photo-1558655146-d09347e92766?auto=format&fit=crop&w=1600&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    text-align:center;
+}
+
+.detail-cta p{
+    color:#e63946;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:3px;
+    margin-bottom:15px;
+}
+
+.detail-cta h2{
+    color:#fff;
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+.detail-cta h2 span{
+    color:#e63946;
+}
+
+.cta-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    padding:15px 27px;
+
+    background:#e63946;
+    color:#fff;
+
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:1px;
+
+    transition:.3s;
+}
+
+.cta-btn:hover{
+    background:#fff;
+    color:#222;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#181818;
+    padding:55px 7% 25px;
+}
+
+.footer-container{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+}
+
+.footer-logo{
+    color:#fff;
+    font-size:25px;
+    font-weight:800;
+    margin-bottom:12px;
+}
+
+.footer-logo span{
+    color:#e63946;
+}
+
+.footer-container > p{
+    color:#999;
+    font-size:11px;
+    margin-bottom:22px;
+}
+
+.social-icons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    margin-bottom:30px;
+}
+
+.social-icons a{
+    width:35px;
+    height:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#292929;
+    color:#aaa;
+
+    font-size:11px;
+
+    transition:.3s;
+}
+
+.social-icons a:hover{
+    background:#e63946;
+    color:#fff;
+}
+
+.copyright{
+    padding-top:22px;
+    border-top:1px solid #292929;
+
+    color:#777;
+    font-size:9px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    nav{
+        gap:17px;
+    }
+
+    .detail-container,
+    .easy-container{
+        grid-template-columns:1fr;
+        gap:45px;
+    }
+
+    .experience-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .steps-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    nav{
+        display:none;
+    }
+
+    .mobile-menu{
+        display:block;
+    }
+
+    .page-hero{
+        min-height:360px;
+    }
+
+    .page-hero-content h1{
+        font-size:34px;
+    }
+
+    .user-detail,
+    .experience-section,
+    .easy-section,
+    .steps-section{
+        padding:65px 6%;
+    }
+
+    .detail-content h2,
+    .easy-content h2{
+        font-size:28px;
+    }
+
+    .detail-image{
+        height:330px;
+    }
+
+    .experience-grid,
+    .steps-container{
+        grid-template-columns:1fr;
+    }
+
+    .easy-image{
+        height:320px;
+    }
+
+    .detail-cta h2{
+        font-size:28px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="features-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            App<span>ify</span>
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="features.html" class="active">
+                FEATURES
+            </a>
+
+            <a href="download.html">
+                DOWNLOAD
+            </a>
+
+            <a href="blog.html">
+                BLOG
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+        <div class="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <p class="small-title">
+            APPIFY FEATURE
+        </p>
+
+        <h1>
+            User
+            <span>Friendly.</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <p class="description">
+            A clean and intuitive experience designed to make
+            every interaction simple, comfortable and enjoyable.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN DETAIL ================= -->
+
+<section class="user-detail">
+
+    <div class="detail-container">
+
+
+        <div class="detail-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1000&q=85"
+                alt="User Friendly App">
+
+        </div>
+
+
+        <div class="detail-content">
+
+            <p class="sub-heading">
+                FEATURE 06
+            </p>
+
+            <h2>
+                Simple By
+                <span>Design.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Appify is designed around a simple idea:
+                technology should feel easy to use.
+            </p>
+
+            <p>
+                The interface keeps important actions clear,
+                navigation simple and information easy to find.
+            </p>
+
+            <p>
+                Whether you are using the app for the first time
+                or every day, the experience is designed to feel
+                natural and comfortable.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXPERIENCE ================= -->
+
+<section class="experience-section">
+
+    <div class="section-heading">
+
+        <p class="sub-heading">
+            DESIGNED FOR EVERYONE
+        </p>
+
+        <h2>
+            An Experience That
+            <span>Feels Natural.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="experience-grid">
+
+
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-hand-pointer"></i>
+            </div>
+
+            <h3>
+                Easy Navigation
+            </h3>
+
+            <p>
+                Find the features you need quickly with clear
+                and straightforward navigation.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-layer-group"></i>
+            </div>
+
+            <h3>
+                Clean Interface
+            </h3>
+
+            <p>
+                A simple layout keeps the interface organized
+                without unnecessary visual complexity.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <h3>
+                Easy To Find
+            </h3>
+
+            <p>
+                Important information and actions are placed
+                where you naturally expect them.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-mobile-screen"></i>
+            </div>
+
+            <h3>
+                Mobile Friendly
+            </h3>
+
+            <p>
+                Enjoy a comfortable experience across different
+                screen sizes and supported devices.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-font"></i>
+            </div>
+
+            <h3>
+                Clear Information
+            </h3>
+
+            <p>
+                Content is presented in a readable and
+                understandable format.
+            </p>
+
+        </div>
+
+
+        <div class="experience-card">
+
+            <div class="experience-icon">
+                <i class="fa-solid fa-face-smile"></i>
+            </div>
+
+            <h3>
+                Enjoyable Experience
+            </h3>
+
+            <p>
+                Every interaction is designed to feel smooth,
+                comfortable and easy.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EASY SECTION ================= -->
+
+<section class="easy-section">
+
+    <div class="easy-container">
+
+
+        <div class="easy-content">
+
+            <p class="sub-heading">
+                MADE SIMPLE
+            </p>
+
+            <h2>
+                Less Complexity.
+                <span>More Experience.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Great design should help users accomplish their
+                goals without making them think about how the
+                interface works.
+            </p>
+
+            <p>
+                Appify focuses on clear layouts, familiar
+                interactions and simple navigation so that you
+                can concentrate on what matters.
+            </p>
+
+
+            <div class="easy-list">
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Simple navigation
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Clean and organized interface
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Comfortable user experience
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Designed for everyday use
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="easy-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=1000&q=85"
+                alt="Simple App Interface">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STEPS ================= -->
+
+<section class="steps-section">
+
+    <div class="section-heading">
+
+        <p class="sub-heading">
+            SIMPLE FROM THE START
+        </p>
+
+        <h2>
+            Easy To
+            <span>Use.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="steps-container">
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                01
+            </div>
+
+            <h3>
+                Explore
+            </h3>
+
+            <p>
+                Discover the features and information you need
+                through a clear interface.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                02
+            </div>
+
+            <h3>
+                Use
+            </h3>
+
+            <p>
+                Complete your tasks using simple and familiar
+                interactions.
+            </p>
+
+        </div>
+
+
+        <div class="step-card">
+
+            <div class="step-number">
+                03
+            </div>
+
+            <h3>
+                Enjoy
+            </h3>
+
+            <p>
+                Experience an application that stays simple,
+                useful and comfortable.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="detail-cta">
+
+    <div>
+
+        <p>
+            READY TO EXPERIENCE APPIFY?
+        </p>
+
+        <h2>
+            Simple.
+            <span>Powerful. Beautiful.</span>
+        </h2>
+
+        <a href="download.html" class="cta-btn">
+
+            DOWNLOAD APP
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            App<span>ify</span>
+        </div>
+
+        <p>
+            Modern mobile experience for modern users.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Appify. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>

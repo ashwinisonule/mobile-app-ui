@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Appify — Smart Analytics</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #f7f7f7;
+            color: #555;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* ================= HEADER ================= */
+
+        .features-header {
+            width: 100%;
+            height: 78px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+            z-index: 100;
+        }
+
+        .header-container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            color: #222;
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #e63946;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+
+        nav a {
+            color: #555;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: .3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #e63946;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 20px;
+            color: #222;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .page-hero {
+            min-height: 440px;
+
+            background:
+                linear-gradient(
+                    rgba(20, 20, 20, .80),
+                    rgba(20, 20, 20, .80)
+                ),
+                url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .page-hero-content {
+            max-width: 850px;
+        }
+
+        .small-title {
+            color: #e63946;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 18px;
+        }
+
+        .page-hero-content h1 {
+            color: #fff;
+            font-size: 50px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .page-hero-content h1 span {
+            color: #e63946;
+        }
+
+        .line {
+            width: 55px;
+            height: 3px;
+            background: #e63946;
+            margin: 0 auto 25px;
+        }
+
+        .description {
+            color: #ddd;
+            font-size: 13px;
+            line-height: 1.9;
+            max-width: 650px;
+            margin: auto;
+        }
+
+
+        /* ================= DETAIL ================= */
+
+        .analytics-detail {
+            padding: 90px 7%;
+        }
+
+        .detail-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .detail-image {
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .detail-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .sub-heading {
+            color: #e63946;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 14px;
+        }
+
+        .detail-content h2 {
+            color: #222;
+            font-size: 36px;
+            line-height: 1.25;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .detail-content h2 span {
+            color: #e63946;
+        }
+
+        .red-line {
+            width: 50px;
+            height: 3px;
+            background: #e63946;
+            margin-bottom: 25px;
+        }
+
+        .detail-content p {
+            color: #777;
+            font-size: 13px;
+            line-height: 2;
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= ANALYTICS CARDS ================= */
+
+        .analytics-section {
+            background: #fff;
+            padding: 90px 7%;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+
+        .section-heading h2 {
+            color: #222;
+            font-size: 34px;
+            line-height: 1.3;
+            font-weight: 800;
+        }
+
+        .section-heading h2 span {
+            color: #e63946;
+        }
+
+        .analytics-grid {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .analytics-card {
+            padding: 35px 28px;
+
+            background: #f7f7f7;
+            border: 1px solid #eee;
+
+            transition: .3s;
+        }
+
+        .analytics-card:hover {
+            transform: translateY(-5px);
+            border-color: #e63946;
+        }
+
+        .analytics-icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #e63946;
+            color: #fff;
+
+            font-size: 18px;
+            margin-bottom: 22px;
+        }
+
+        .analytics-card h3 {
+            color: #222;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .analytics-card p {
+            color: #777;
+            font-size: 11px;
+            line-height: 1.9;
+        }
+
+
+        /* ================= INSIGHTS ================= */
+
+        .insights-section {
+            padding: 90px 7%;
+            background: #f1f1f1;
+        }
+
+        .insights-container {
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .insights-content h2 {
+            color: #222;
+            font-size: 34px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .insights-content h2 span {
+            color: #e63946;
+        }
+
+        .insights-content p {
+            color: #777;
+            font-size: 13px;
+            line-height: 2;
+            margin-bottom: 20px;
+        }
+
+        .insight-list {
+            margin-top: 25px;
+        }
+
+        .insight-list div {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            color: #555;
+            font-size: 12px;
+            font-weight: 600;
+
+            margin-bottom: 15px;
+        }
+
+        .insight-list i {
+            width: 23px;
+            height: 23px;
+
+            background: #e63946;
+            color: #fff;
+
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 9px;
+        }
+
+        .insights-image {
+            height: 430px;
+        }
+
+        .insights-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .detail-cta {
+            padding: 90px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(20,20,20,.88),
+                    rgba(20,20,20,.88)
+                ),
+                url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+
+            text-align: center;
+        }
+
+        .detail-cta p {
+            color: #e63946;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+        }
+
+        .detail-cta h2 {
+            color: #fff;
+            font-size: 38px;
+            margin-bottom: 25px;
+        }
+
+        .detail-cta h2 span {
+            color: #e63946;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 15px 27px;
+
+            background: #e63946;
+            color: #fff;
+
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 1px;
+
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+            background: #fff;
+            color: #222;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #181818;
+            padding: 55px 7% 25px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: #fff;
+            font-size: 25px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-logo span {
+            color: #e63946;
+        }
+
+        .footer-container > p {
+            color: #999;
+            font-size: 11px;
+            margin-bottom: 22px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            width: 35px;
+            height: 35px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #292929;
+            color: #aaa;
+
+            font-size: 11px;
+
+            transition: .3s;
+        }
+
+        .social-icons a:hover {
+            background: #e63946;
+            color: #fff;
+        }
+
+        .copyright {
+            padding-top: 22px;
+            border-top: 1px solid #292929;
+
+            color: #777;
+            font-size: 9px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                gap: 17px;
+            }
+
+            .detail-container,
+            .insights-container {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            nav {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .page-hero {
+                min-height: 360px;
+            }
+
+            .page-hero-content h1 {
+                font-size: 34px;
+            }
+
+            .analytics-detail,
+            .analytics-section,
+            .insights-section {
+                padding: 65px 6%;
+            }
+
+            .detail-content h2,
+            .insights-content h2 {
+                font-size: 28px;
+            }
+
+            .detail-image {
+                height: 330px;
+            }
+
+            .analytics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .insights-image {
+                height: 320px;
+            }
+
+            .detail-cta h2 {
+                font-size: 28px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="features-header">
+
+    <div class="header-container">
+
+        <a href="index.html" class="logo">
+            App<span>ify</span>
+        </a>
+
+        <nav>
+
+            <a href="index.html">
+                HOME
+            </a>
+
+            <a href="features.html" class="active">
+                FEATURES
+            </a>
+
+            <a href="download.html">
+                DOWNLOAD
+            </a>
+
+            <a href="blog.html">
+                BLOG
+            </a>
+
+            <a href="contact.html">
+                CONTACT
+            </a>
+
+        </nav>
+
+        <div class="mobile-menu">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="page-hero">
+
+    <div class="page-hero-content">
+
+        <p class="small-title">
+            APPIFY FEATURE
+        </p>
+
+        <h1>
+            Smart
+            <span>Analytics.</span>
+        </h1>
+
+        <div class="line"></div>
+
+        <p class="description">
+            Turn everyday activity into meaningful insights
+            with simple analytics designed to help you
+            understand your progress.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN DETAIL ================= -->
+
+<section class="analytics-detail">
+
+    <div class="detail-container">
+
+        <div class="detail-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85"
+                alt="Smart Analytics Dashboard">
+
+        </div>
+
+
+        <div class="detail-content">
+
+            <p class="sub-heading">
+                FEATURE 03
+            </p>
+
+            <h2>
+                Understand Your
+                <span>Progress.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Appify transforms useful activity data into
+                simple and understandable insights.
+            </p>
+
+            <p>
+                Instead of overwhelming you with complicated
+                information, the analytics experience focuses
+                on the details that actually matter.
+            </p>
+
+            <p>
+                Track patterns, understand your progress and
+                make better everyday decisions with information
+                presented in a clear and meaningful way.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ANALYTICS FEATURES ================= -->
+
+<section class="analytics-section">
+
+    <div class="section-heading">
+
+        <p class="sub-heading">
+            SMART INSIGHTS
+        </p>
+
+        <h2>
+            Information Made
+            <span>Simple.</span>
+        </h2>
+
+    </div>
+
+
+    <div class="analytics-grid">
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                <i class="fa-solid fa-chart-line"></i>
+            </div>
+
+            <h3>
+                Progress Tracking
+            </h3>
+
+            <p>
+                Follow your progress over time and understand
+                how your activity changes from day to day.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                <i class="fa-solid fa-chart-pie"></i>
+            </div>
+
+            <h3>
+                Clear Statistics
+            </h3>
+
+            <p>
+                Important information is presented in a clean
+                format that is easy to understand.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+
+            <h3>
+                Useful Insights
+            </h3>
+
+            <p>
+                Discover useful patterns and information that
+                can help you make better decisions.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <h3>
+                Activity Overview
+            </h3>
+
+            <p>
+                Get a simple overview of your activities and
+                understand your performance over time.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+
+            <h3>
+                Growth Trends
+            </h3>
+
+            <p>
+                Identify positive trends and see where your
+                progress is heading.
+            </p>
+
+        </div>
+
+
+        <div class="analytics-card">
+
+            <div class="analytics-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <h3>
+                Better Decisions
+            </h3>
+
+            <p>
+                Turn useful information into practical insights
+                for everyday decisions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= INSIGHTS ================= -->
+
+<section class="insights-section">
+
+    <div class="insights-container">
+
+
+        <div class="insights-content">
+
+            <p class="sub-heading">
+                DATA THAT HELPS
+            </p>
+
+            <h2>
+                See More.
+                <span>Understand Better.</span>
+            </h2>
+
+            <div class="red-line"></div>
+
+            <p>
+                Good analytics should not feel complicated.
+                Appify focuses on presenting useful information
+                in a simple and accessible way.
+            </p>
+
+            <p>
+                Whether you want to check recent activity,
+                understand a trend or simply see how you are
+                progressing, everything is designed to be easy
+                to understand.
+            </p>
+
+
+            <div class="insight-list">
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Easy-to-read statistics
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Useful activity insights
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Simple progress tracking
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    Meaningful information
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="insights-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=85"
+                alt="Analytics Insights">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="detail-cta">
+
+    <div>
+
+        <p>
+            READY TO EXPERIENCE APPIFY?
+        </p>
+
+        <h2>
+            Know More.
+            <span>Do More.</span>
+        </h2>
+
+        <a href="download.html" class="cta-btn">
+
+            DOWNLOAD APP
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div class="footer-logo">
+            App<span>ify</span>
+        </div>
+
+        <p>
+            Modern mobile experience for modern users.
+        </p>
+
+        <div class="social-icons">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-twitter"></i>
+            </a>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 Appify. All Rights Reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
