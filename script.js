@@ -1,15 +1,30 @@
 const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-menu");
 
-menuBtn.addEventListener("click", () => {
-    navMenu.classList.toggle("show");
-});
+if (menuBtn && navMenu) {
 
+    menuBtn.addEventListener("click", () => {
+        navMenu.classList.toggle("show");
 
-document.querySelectorAll(".nav-menu a").forEach(link => {
+        const icon = menuBtn.querySelector("i");
 
-    link.addEventListener("click", () => {
-        navMenu.classList.remove("show");
+        if (navMenu.classList.contains("show")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-xmark");
+        } else {
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        }
     });
 
-});
+    navMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+            navMenu.classList.remove("show");
+
+            const icon = menuBtn.querySelector("i");
+            icon.classList.remove("fa-xmark");
+            icon.classList.add("fa-bars");
+        });
+    });
+
+}

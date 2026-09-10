@@ -867,25 +867,87 @@ footer {
 }
 
 
-/* ================= RESPONSIVE ================= */
-
 @media (max-width: 900px) {
+
+    .nav-container {
+        position: relative;
+    }
 
     .nav-menu {
         display: none;
+
+        position: absolute;
+        top: 75px;
+        right: 0;
+
+        width: 180px;
+
+        flex-direction: column;
+        gap: 0;
+
+        padding: 8px 0;
+
+        background: rgba(255, 255, 255, 0.96);
+
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+        z-index: 1000;
+    }
+
+    /* CLICK केल्यावर menu open */
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu a {
+        width: 100%;
+
+        padding: 12px 18px;
+
+        color: #333;
+
+        font-size: 12px;
+
+        border-bottom: 1px solid #eee;
+    }
+
+    .nav-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .nav-menu a.active {
+        color: #ff4d5a;
+        font-weight: 700;
+    }
+
+    .nav-menu a.active::after {
+        width: 100%;
     }
 
     .menu-btn {
-        display: block;
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: #fff;
+
+        font-size: 24px;
+
+        cursor: pointer;
+
+        padding: 5px;
+
+        z-index: 1001;
     }
+
+
+    /* बाकीचा तुमचा responsive CSS */
 
     .hero-container {
         flex-direction: column;
-
         justify-content: center;
-
         text-align: center;
-
         padding-top: 100px;
     }
 
@@ -904,7 +966,6 @@ footer {
 
     .phone-area {
         width: 100%;
-
         padding-top: 50px;
     }
 
@@ -918,7 +979,6 @@ footer {
 
     .intro-container {
         grid-template-columns: 1fr;
-
         padding: 40px 0;
     }
 
@@ -928,9 +988,7 @@ footer {
 
     .download-section {
         flex-direction: column;
-
         text-align: center;
-
         gap: 60px;
     }
 
@@ -940,48 +998,5 @@ footer {
 
     .download-phone {
         padding-right: 0;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .nav-container {
-        width: 90%;
-    }
-
-    .hero h1 {
-        font-size: 48px;
-
-        letter-spacing: -2px;
-    }
-
-    .hero-text {
-        font-size: 14px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .btn {
-        width: 100%;
-    }
-
-    .phone {
-        width: 250px;
-        height: 500px;
-    }
-
-    .section-heading h2 {
-        font-size: 32px;
-    }
-
-    .download-content h2 {
-        font-size: 35px;
-    }
-
-    .store-buttons {
-        flex-direction: column;
     }
 }
